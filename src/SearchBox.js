@@ -7,7 +7,7 @@ const SearchBox = ({ onClickSearchButton }) => {
 
     console.log('in search box')
     return (
-        <>
+        <div>
 
             <input
                 type="text"
@@ -18,7 +18,7 @@ const SearchBox = ({ onClickSearchButton }) => {
             />
             <button onClick={() => onClickSearchButton(searchText)} >Search</button>
 
-        </>
+        </div>
     )
 }
 

@@ -1,10 +1,10 @@
 import './App.css';
-import pic from './assets/icons/01d.svg'
 import NavBar from './NavBar';
 import { useEffect, useState } from 'react';
-import { getData } from './helpers';
 import { buildWeatherData, getCoords } from './helpers';
 import Widget from './Widget';
+import SearchBox from './SearchBox';
+import { route, BrowserRouter as router } from "react-router-dom";
 
 function App() {
 
@@ -38,10 +38,23 @@ function App() {
 
 
   return (
-    <div className="App">
-      <NavBar onClickSearchButton={onClickSearchButton} />
-      {weatherData && weatherData.map((day) => <Widget day={day} />)}
-    </div>
+    <Router>
+
+      <div className="App">
+        <NavBar onClickSearchButton={onClickSearchButton} />
+
+        {!weatherData &&
+          <div className='landing-page-search'>
+            <SearchBox onClickSearchButton={onClickSearchButton} />
+          </div>}
+
+        {weatherData &&
+          <div className='five-day'>
+            {weatherData.map((day) =>
+              <Widget day={day} />)}</div>}
+      </div>
+
+    </Router>
   );
 }
 
