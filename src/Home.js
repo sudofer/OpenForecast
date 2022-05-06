@@ -1,14 +1,14 @@
 import NavBar from "./NavBar"
 import SearchBox from "./SearchBox"
 
-export const Home = () => {
+export const Home = ({ onClickSearchButton }) => {
 
 
 
     return (
         <div>
             <NavBar onClickSearchButton={onClickSearchButton} />
-            <SearchBox />
+            <SearchBox onClickSearchButton={onClickSearchButton} />
         </div>
     )
 

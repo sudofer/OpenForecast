@@ -4,12 +4,15 @@ import { useEffect, useState } from 'react';
 import { buildWeatherData, getCoords } from './helpers';
 import Widget from './Widget';
 import SearchBox from './SearchBox';
-import { route, BrowserRouter as router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Home } from './Home';
+import { FiveDay } from './FiveDay';
+import { Day } from './Day';
 
 function App() {
 
   const [weatherData, setWeatherData] = useState("");
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState("");
 
   const onClickSearchButton = (searchString) => {
 
@@ -28,7 +31,7 @@ function App() {
       console.log(body);
 
 
-      const dataArr = body.daily.map((day) => buildWeatherData(day));
+      const dataArr = body.daily.map((day) => buildWeatherData(day, searchText));
       setWeatherData(dataArr.slice(0, 5));
     }
     if (searchText) {
@@ -38,20 +41,14 @@ function App() {
 
 
   return (
+
     <Router>
-
       <div className="App">
-        <NavBar onClickSearchButton={onClickSearchButton} />
-
-        {!weatherData &&
-          <div className='landing-page-search'>
-            <SearchBox onClickSearchButton={onClickSearchButton} />
-          </div>}
-
-        {weatherData &&
-          <div className='five-day'>
-            {weatherData.map((day) =>
-              <Widget day={day} />)}</div>}
+        <Routes>
+          <Route exact path='/' element={<Home onClickSearchButton={onClickSearchButton} />} />
+          <Route exact path='/five-day' element={<FiveDay weatherData={weatherData} onClickSearchButton={onClickSearchButton} />} />
+          <Route exact path='/day' element={<Day />} />
+        </Routes>
       </div>
 
     </Router>

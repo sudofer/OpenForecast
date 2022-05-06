@@ -3,16 +3,6 @@ import moment from "moment";
 
 
 export const buildWeatherData = (day, city) => {
-
-    //cityName
-    //icon
-    //date: weekday,month num
-    //description (light rain)
-    //min temp
-    //max temp
-    //humidity
-
-
     const date = moment.unix(day.dt).format('dddd');
     const desc = day.weather[0].description;
     const icon = day.weather[0].icon;
@@ -33,6 +23,9 @@ export const getCoords = async (city) => {
     console.log(body);
     const lat = body[0]?.lat;
     const lon = body[0]?.lon;
-
     return { lat, lon };
+}
+
+export const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

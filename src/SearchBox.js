@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
+import "./search-box.css"
 import { useState } from "react";
-
+import { FiveDay } from "./FiveDay";
+import { Link } from "react-router-dom";
 const SearchBox = ({ onClickSearchButton }) => {
 
     const [searchText, setSearchText] = useState("");
@@ -16,7 +17,10 @@ const SearchBox = ({ onClickSearchButton }) => {
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
             />
-            <button onClick={() => onClickSearchButton(searchText)} >Search</button>
+            <Link to='/five-day' style={{ textDecoration: 'none' }} element={<FiveDay />}>
+                <button onClick={() => onClickSearchButton(searchText)} >Search</button>
+
+            </Link>
 
         </div>
     )

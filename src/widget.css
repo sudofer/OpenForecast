@@ -1,0 +1,19 @@
+.container {
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px 2px;
+    margin: 5px;
+    display: inline-block;
+    min-height: 200px;
+    min-width: 200px;
+    justify-content: center;
+    text-align: center;
+}
+
+.container :hover {
+    box-shadow: 5px 5px 5px 5px;
+}
+
+img {
+    margin: 10px;
+    size: large;
+}
