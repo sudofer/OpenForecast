@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import "./nav-bar.css";
 const NavBar = ({ onClickSearchButton }) => {
-    console.log('in nav bar')
+
+
     return (
         <div className="nav-bar">
             <Link to='/' style={{ textDecoration: 'none' }}>

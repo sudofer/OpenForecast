@@ -1,12 +1,10 @@
 import "./widget.css";
-import { Link, Route, Routes } from "react-router-dom";
-import { Day } from "./Day";
+import { Link } from "react-router-dom";
+
 const Widget = ({ day }) => {
     const { date, max, min, desc, icon, city } = day;
     console.log({ day });
-    const img = `http://openweathermap.org/img/wn/${icon}@2x.png`
     return (
-
         <>
             <Link
                 to={'/day'}
@@ -29,5 +27,3 @@ const Widget = ({ day }) => {
 }
 
 export default Widget;
-
-// style={{ textDecoration: 'none' }}
