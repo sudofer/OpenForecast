@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
-import "./nav-bar.css";
+import "../styles/nav-bar.css";
 const NavBar = ({ onClickSearchButton }) => {
 
 

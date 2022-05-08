@@ -1,6 +1,6 @@
-import NavBar from "./NavBar";
-import Widget from "./Widget";
-import "./five-day.css"
+import NavBar from "../partials/NavBar";
+import Widget from "../partials/Widget";
+import "../styles/five-day.css"
 import { v4 as uuid } from 'uuid';
 
 export const FiveDay = ({ weatherData, onClickSearchButton }) => {

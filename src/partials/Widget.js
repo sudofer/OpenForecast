@@ -1,4 +1,4 @@
-import "./widget.css";
+import "../styles/widget.css";
 import { Link } from "react-router-dom";
 
 const Widget = ({ day }) => {
@@ -12,15 +12,13 @@ const Widget = ({ day }) => {
                 state={{ day: day }}>
                 <div className="widget-container">
                     <div className='image'>
-                        <img src={require(`./assets/icons/${icon}.svg`)} alt={desc} />
+                        <img src={require(`../assets/icons/${icon}.svg`)} alt={desc} />
                     </div>
                     <h1>{date}</h1>
                     <div className="temps">
                         <div>{max}c</div>
                         <div>{min}c</div>
                     </div>
-
-
                 </div>
             </Link>
         </div>

@@ -1,5 +1,5 @@
-import NavBar from "./NavBar"
-import SearchBox from "./SearchBox"
+import NavBar from "../partials/NavBar"
+import SearchBox from "../partials/SearchBox"
 
 export const Home = ({ onClickSearchButton }) => {
 

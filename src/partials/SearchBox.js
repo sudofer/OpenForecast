@@ -1,6 +1,6 @@
-import "./search-box.css"
+import "../styles/search-box.css"
 import { useState } from "react";
-import { FiveDay } from "./FiveDay";
+import { FiveDay } from "../routes/FiveDay";
 import { Link } from "react-router-dom";
 
 

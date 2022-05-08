@@ -1,10 +1,10 @@
-import './App.css';
+import './styles/App.css';
 import { useEffect, useState } from 'react';
 import { buildWeatherData, getCoords, getData } from './helpers';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import { Home } from './Home';
-import { FiveDay } from './FiveDay';
-import { Day } from './Day';
+import { Home } from './routes/Home';
+import { FiveDay } from './routes/FiveDay';
+import { Day } from './routes/Day';
 
 function App() {
   const [weatherData, setWeatherData] = useState("");
