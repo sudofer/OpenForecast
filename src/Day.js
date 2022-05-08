@@ -1,20 +1,23 @@
 import { useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
+import './day.css'
+
 export const Day = ({ onClickSearchButton }) => {
 
     const location = useLocation();
     const { day } = location.state;
     const { date, max, min, desc, icon, city, humidity } = day;
 
-
     return (
         <>
             <NavBar onClickSearchButton={onClickSearchButton} />
-            {day && <div className="container">
-                <div className='image'>
-                    <img src={require(`./assets/icons/${icon}.svg`)} alt={desc} />
+            {day && <div className="day-container">
+                <div className="day-image-date">
+                    <div className='day-image'>
+                        <img src={require(`./assets/icons/${icon}.svg`)} alt={desc} />
+                    </div>
+                    <h1>{date}</h1>
                 </div>
-                <h1>{date}</h1>
                 <h1>{city}</h1>
                 <h1>{desc}</h1>
                 <h1>min temp: {min}c</h1>

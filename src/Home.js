@@ -6,7 +6,8 @@ export const Home = ({ onClickSearchButton }) => {
     return (
         <div>
             <NavBar onClickSearchButton={onClickSearchButton} />
-            <SearchBox onClickSearchButton={onClickSearchButton} />
+
+            <SearchBox home={true} onClickSearchButton={onClickSearchButton} />
         </div>
     )
 

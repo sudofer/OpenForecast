@@ -5,11 +5,12 @@ const Widget = ({ day }) => {
     const { date, max, min, desc, icon, city } = day;
     console.log({ day });
     return (
-        <>
+        <div>
             <Link
                 to={'/day'}
+                style={{ textDecoration: 'none' }}
                 state={{ day: day }}>
-                <div className="container">
+                <div className="widget-container">
                     <div className='image'>
                         <img src={require(`./assets/icons/${icon}.svg`)} alt={desc} />
                     </div>
@@ -22,7 +23,7 @@ const Widget = ({ day }) => {
 
                 </div>
             </Link>
-        </>
+        </div>
     )
 }
 

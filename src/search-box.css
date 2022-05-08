@@ -16,3 +16,23 @@ button {
     border-radius: 5px;
     margin-left: 3px;
 }
+
+div .home {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: large;
+}
+
+div .home button {
+    margin-top: 3px;
+}
+
+div .nav {
+    margin-top: 25px;
+}

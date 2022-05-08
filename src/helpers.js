@@ -1,6 +1,5 @@
 import moment from "moment";
 
-
 export const buildWeatherData = (day, city) => {
     const date = moment.unix(day.dt).format('dddd, MMMM Do');
     const desc = day.weather[0].description;
@@ -16,12 +15,16 @@ export const kelvinToCelcius = (k) => {
     return k - 273.15;
 }
 
-export const getCoords = async (city) => {
-    const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.REACT_APP_API_KEY}`)
+export const getCoords = async (searchString) => {
+    const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchString}&limit=1&appid=${process.env.REACT_APP_API_KEY}`)
     const body = await res.json();
+    console.log(searchString)
+    console.log(body);
     const lat = body[0]?.lat;
     const lon = body[0]?.lon;
-    return { lat, lon };
+    const city = body[0]?.name;
+    console.log(city);
+    return { lat, lon, city };
 }
 
 export const capitalize = (string) => {
