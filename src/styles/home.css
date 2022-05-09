@@ -1,6 +1,10 @@
 .landing-page {
-    background-image: 'url(' + require('../assets/background.jpg') + ')';
-    background-size: cover;
-    background-position: bottom;
+  background-image: "url(" + require("../assets/background.jpg") + ")";
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
 }
 
+.landing-title {
+  margin-top: 100px;
+}

@@ -1,9 +1,15 @@
 .day-image img {
-    width: 150;
-    height: 150px;
-    margin-top: 50px;
+  width: 150;
+  height: 150px;
+  margin-top: 50px;
 }
 
 .day-image-date {
-    margin-bottom: 45px;
+  margin-bottom: 45px;
+}
+
+.day-container {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
