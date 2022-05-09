@@ -2,6 +2,7 @@
 
 Weather App using OpenWeather API, &amp; React
 
+**You must set a valid OpenWeather API key with a key of REACT_APP_API_KEY in your process.env to use this application**
 
 To run in development mode: 
   1. Clone repo/extract zip
@@ -10,8 +11,7 @@ To run in development mode:
   4. Terminal output will display the port where the development server is hosted (ex http://localhost:3000)
   5. Visit specified port with your preferred browser
   
-  
-  
+ 
   To run in production mode:
   1. Clone repo/extract zip
   2. In the root directory run ``yarn`` or ``npm run install``
