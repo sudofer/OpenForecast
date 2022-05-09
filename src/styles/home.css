@@ -1,0 +1,6 @@
+.landing-page {
+    background-image: 'url(' + require('../assets/background.jpg') + ')';
+    background-size: cover;
+    background-position: bottom;
+}
+

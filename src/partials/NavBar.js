@@ -9,7 +9,9 @@ const NavBar = ({ onClickSearchButton }) => {
             <Link to='/' style={{ textDecoration: 'none' }}>
                 <h1>My Weather App</h1>
             </Link>
-            <SearchBox onClickSearchButton={onClickSearchButton} />
+            <div className="nav-search">
+                <SearchBox onClickSearchButton={onClickSearchButton} />
+            </div>
         </div>)
 }
 

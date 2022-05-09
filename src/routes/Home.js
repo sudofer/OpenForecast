@@ -1,12 +1,21 @@
 import NavBar from "../partials/NavBar"
 import SearchBox from "../partials/SearchBox"
+import '../styles/home.css'
+import bg from '../assets/background.jpg'
+import { useEffect } from "react"
 
-export const Home = ({ onClickSearchButton }) => {
+const styles = {
+    backgroundImage: `url(${bg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "bottom",
+    color: 'red'
+}
+export const Home = ({ onClickSearchButton, clearState }) => {
 
+    useEffect(() => clearState())
     return (
-        <div>
+        <div className="landing-page" style={styles}>
             <NavBar onClickSearchButton={onClickSearchButton} />
-
             <SearchBox home={true} onClickSearchButton={onClickSearchButton} />
         </div>
     )

@@ -1,6 +1,6 @@
 import './styles/App.css';
 import { useEffect, useState } from 'react';
-import { buildWeatherData, getCoords, getData } from './helpers';
+import { buildWeatherData, getCityWeather, getCoords } from './helpers';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { Home } from './routes/Home';
 import { FiveDay } from './routes/FiveDay';
@@ -9,20 +9,21 @@ import { Day } from './routes/Day';
 function App() {
   const [weatherData, setWeatherData] = useState("");
   const [searchText, setSearchText] = useState("");
-
+  
   const onClickSearchButton = (searchString) => {
     setSearchText(searchString);
+  }
+  
+  const clearState = () => {
+    setWeatherData("");
+    setSearchText("");
   }
 
   useEffect(() => {
       const getData = async (city) => {
-      const coords = await getCoords(city);
-      const endpoint = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_API_KEY}`
-      const res = await fetch(endpoint);
-      const body = await res.json();
-  
-      const dataArr = body.daily.map((day) => buildWeatherData(day, coords.city));
-      setWeatherData(dataArr.slice(0, 5));
+        setWeatherData("");
+        const newWeatherData = await getCityWeather(city);  
+        setWeatherData(newWeatherData);
     } 
 
     if (searchText) {
@@ -35,7 +36,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path='/' element={<Home onClickSearchButton={onClickSearchButton} />} />
+          <Route exact path='/' element={<Home clearState={clearState} onClickSearchButton={onClickSearchButton} />} />
           <Route exact path='/five-day' element={<FiveDay weatherData={weatherData} onClickSearchButton={onClickSearchButton} />} />
           <Route exact path='/day' element={<Day onClickSearchButton={onClickSearchButton} />} />
         </Routes>

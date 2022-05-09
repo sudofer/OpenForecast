@@ -1,11 +1,16 @@
 .nav-bar {
-    background-color: orange;
+    background-color: rgb(255, 112, 77);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
 .nav-bar h1 {
     color: white;
+    margin-left: 15px;
+}
+
+.nav-bar .nav-search {
+    margin-right: 15px;
 }

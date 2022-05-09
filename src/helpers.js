@@ -1,5 +1,16 @@
 import moment from "moment";
 
+
+export const getCityWeather = async (city) => {
+    const coords = await getCoords(city);
+    const endpoint = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_API_KEY}`
+    const res = await fetch(endpoint);
+    const body = await res.json();
+
+    const dataArr = body.daily.map((day) => buildWeatherData(day, coords.city));
+    return dataArr.slice(0, 5);   
+}
+
 export const buildWeatherData = (day, city) => {
     const date = moment.unix(day.dt).format('dddd, MMMM Do');
     const desc = day.weather[0].description;

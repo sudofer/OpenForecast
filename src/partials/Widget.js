@@ -2,7 +2,7 @@ import "../styles/widget.css";
 import { Link } from "react-router-dom";
 
 const Widget = ({ day }) => {
-    const { date, max, min, desc, icon, city } = day;
+    const { date, max, min, desc, icon } = day;
     console.log({ day });
     return (
         <div>
@@ -15,10 +15,6 @@ const Widget = ({ day }) => {
                         <img src={require(`../assets/icons/${icon}.svg`)} alt={desc} />
                     </div>
                     <h1>{date}</h1>
-                    <div className="temps">
-                        <div>{max}c</div>
-                        <div>{min}c</div>
-                    </div>
                 </div>
             </Link>
         </div>
