@@ -11,6 +11,7 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [error, setError] = useState(false);
   const onClickSearchButton = (searchString) => {
+    setWeatherData("");
     setSearchText(searchString);
   };
 
