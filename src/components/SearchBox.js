@@ -13,9 +13,6 @@ const SearchBox = ({ onClickSearchButton, home }) => {
         placeholder="Search Any City..."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
-        onKeyDown={(e) =>
-          e.key === "Enter" ? document.getElementById("btn").click() : null
-        }
       />
       <Link to="/five-day" style={{ textDecoration: "none" }}>
         <button id="btn" onClick={() => onClickSearchButton(inputText)}>
