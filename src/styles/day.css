@@ -1,11 +1,10 @@
 .day-image img {
-  width: 150;
   height: 150px;
   margin-top: 50px;
 }
 
 .day-image-date {
-  margin-bottom: 45px;
+  margin-bottom: 50px;
 }
 
 .day-container {

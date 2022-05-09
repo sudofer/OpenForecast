@@ -2,6 +2,7 @@ import "../styles/search-box.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+//{ home } is a css flag to indicate SearchBox is being rendered on the home page
 const SearchBox = ({ onClickSearchButton, home }) => {
   const [inputText, setInputText] = useState("");
 

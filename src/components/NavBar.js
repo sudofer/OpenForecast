@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import "../styles/nav-bar.css";
+
 const NavBar = ({ onClickSearchButton }) => {
   return (
     <div className="nav-bar">

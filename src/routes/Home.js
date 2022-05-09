@@ -10,6 +10,7 @@ export const Home = ({ onClickSearchButton, clearState }) => {
       <NavBar onClickSearchButton={onClickSearchButton} />
       <h1 className="landing-title">Enter a City</h1>
       <SearchBox home={true} onClickSearchButton={onClickSearchButton} />
+      {/*{ home } is a css flag to indicate SearchBox is being rendered on the home page */}
     </div>
   );
 };
