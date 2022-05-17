@@ -1,4 +1,4 @@
-# adaptavist-assessment
+# OpenForecast
 
 Weather App using OpenWeather API, &amp; React
 
